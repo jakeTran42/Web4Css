@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: #2a2a2a;
+}
+
+body {
+  position: relative;
+  font-family: sans-serif;
+}
+
+h3 {
+  margin-top: 75px;
+  display: inline-block;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 200px 100px 500px 200px;
+  grid-template-areas:  "h h h"
+                        "n n n"
+                        "b b b"
+                        "f f f";
+}
+
+.body {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 500px;
+  grid-template-areas:  "b1 b2 b3"
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+.banner {
+  grid-area: h;
+}
+
+#banner {
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-image: url("inner_page_bnr.jpg");
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 50s linear infinite;
+}
+
+.nav-bar {
+  grid-area: n;
+  display: flex;
+  justify-content: space-around;
+}
+
+.body {
+  z-index: 1;
+  grid-area: b;
+}
+
+.content1, .content2 {
+  border-right: 2px rgba(255, 255, 255, 0.2) solid;
+}
+
+.content1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: b1;
+  background-color: transparent;
+  align-items: center;
+}
+
+.content2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: b2;
+  background-color: transparent;
+}
+
+.content3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: b3;
+  background-color: transparent;
+}
+
+.footer {
+  display: flex;
+  grid-area: f;
+  justify-content: center;
+}
+
+.copyright {
+  font-size: 15px;
+  color: white !important;
+  margin-top: 150px;
+}
